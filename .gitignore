@@ -1,0 +1,15 @@
+# .gitignore
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+*.tsbuildinfo
+
+# Secrets & Config
+.npmrc
+.env
+
+# OS files
+.DS_Store

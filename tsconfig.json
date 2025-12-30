@@ -1,0 +1,33 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    // "rootDir": "./src",
+    // "outDir": "./dist",
+    "module": "esnext",
+    "target": "esnext",
+    "types": [],
+    "moduleResolution": "bundler",
+    "outDir": "./dist",
+    "esModuleInterop": true, 
+
+    // Declaration Files
+    "declaration": true, // generates .d.ts files
+    "declarationMap": true, //Allows definitions to be mapped to their source .ts files
+
+    // Other Outputs
+    "sourceMap": true,
+
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+  }
+}
