@@ -1,18 +1,19 @@
 {
   "name": "@scofez/easy-auth",
-  "version": "0.0.2",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Simplified Authentication logic and MUI components for React",
   "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "module": "./dist/index.js",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --external react",
+    "playground": "pnpm --filter playground dev",
     "release": "pnpm build && npm publish --access public --userconfig ./.npmrc"
   },
-  "keywords": [],
   "author": "Nassim Dridi",
   "license": "ISC",
   "packageManager": "pnpm@10.11.0",
@@ -20,8 +21,23 @@
     "axios": "^1.13.2",
     "js-cookie": "^3.0.5"
   },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "@mui/material": ">=6",
+    "@emotion/react": ">=11",
+    "@emotion/styled": ">=11"
+  },
   "devDependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.6",
     "@types/js-cookie": "^3.0.6",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   }
 }

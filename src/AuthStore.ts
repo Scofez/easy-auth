@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 export class AuthStore {
     constructor(private readonly tokenKey: string) {}
 
-/**
+    /**
      * Saves the JWT token to a secure cookie.
      * 
      * @param {string} token - The JWT string received from the server.
