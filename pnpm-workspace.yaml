@@ -1,0 +1,3 @@
+packages:
+  - '.' # Library
+  - 'playground' # Demo Application
