@@ -1,7 +1,10 @@
 {
   "files": [],
+  //we are using reference here so we can also reference the library package.json
+  //but it requires to be a composite config
   "references": [
     { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    { "path": "./tsconfig.node.json" },
+    { "path": "../" }
   ]
 }
