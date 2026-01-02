@@ -13,6 +13,7 @@
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
+    //noEmit is set to true as we are using Vite to transpile the code
     "noEmit": true,
     "jsx": "react-jsx",
 
@@ -24,5 +25,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src"] // Tells TS exactly which files to include in this project
 }

@@ -1,15 +1,27 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
-    "module": "esnext",
+    
+    // Base Options
+    "esModuleInterop": true, //lowers conflicts between cjs & esm
+    "module": "esnext", //we are not going to run this in a Nodejs env so we should use esnext
     "target": "esnext",
-    "types": [],
+    "moduleDetection": "force", // everyfile is treated as a module instead of a global script
+    "skipLibCheck": true, //doesn't check types of all the files in node_modules
+    
+    //Strictness always must be used
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+
+    // not transpiling with Typescript in our case we are using esbuild (tsup)
     "moduleResolution": "bundler",
+    //noEmit is set to false as we are using tsup to transpile the code
+    //if it was set to true When tsup tries to generate your .d.ts files, 
+    // TypeScript will obey that rule and refuse to create them.
+    "noEmit": false,
+    
+    //usefule when emitting files to a specific destination
     "outDir": "./dist",
-    "esModuleInterop": true, 
 
     // Declaration Files
     "declaration": true, // generates .d.ts files
@@ -18,17 +30,16 @@
     // Other Outputs
     "sourceMap": true,
 
-    "noUncheckedIndexedAccess": true,
+    // More 
     "exactOptionalPropertyTypes": true,
-
-    // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "verbatimModuleSyntax": true,
+    "jsx": "react-jsx", //adding this as we are using react
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], //DOM is added because we're also creating components
+    "verbatimModuleSyntax": true, // 
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
+
+    //as we added playground, this became a monorepo containing another project inside
+    "composite": true, //this allows the project inside to reference this one
+    "rootDir": "src",
   }
 }
