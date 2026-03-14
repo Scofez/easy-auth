@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import { AuthForm, type AuthCredentials } from '@scofez/easy-auth';
+import { AuthForm, type AuthCredentials } from '../../src/components/AuthForm'
 
 function App() {
   const handleLogin = (creds: AuthCredentials) => {
