@@ -41,5 +41,6 @@
     //as we added playground, this became a monorepo containing another project inside
     "composite": true, //this allows the project inside to reference this one
     "rootDir": "src",
-  }
+  },
+  "include": ["src/**/*"]
 }

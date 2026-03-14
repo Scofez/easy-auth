@@ -1,3 +1,3 @@
-export * from './QueryHandler.js';
-export * from './AuthStore.js';
+export * from './QueryHandler';
+export * from './AuthStore';
 export * from './components/AuthForm';
